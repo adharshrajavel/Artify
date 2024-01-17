@@ -109,22 +109,6 @@ def find_dominant_color(source_url):
     return dominant_color
 
 
-def step(r,g,b, repetitions=1):
-    lum = math.sqrt( .241 * r + .691 * g + .068 * b )
-
-    h, s, v = colorsys.rgb_to_hsv(r,g,b)
-
-    h2 = int(h * repetitions)
-    lum2 = int(lum * repetitions)
-    v2 = int(v * repetitions)
-
-    if h2 % 2 == 0:
-        v2 = repetitions - v2
-        lum = repetitions - lum
-
-    return (h2, lum, v2)
-
-
 
 # function to get the token info from the session
 def get_token():
